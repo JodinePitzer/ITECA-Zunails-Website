@@ -1,0 +1,247 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative; 
+    width: 90%; 
+    max-width: 1200px; 
+    height: 90%; 
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    margin: auto; 
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: 15px; 
+    padding: 20px;
+}
+
+.section-box {
+    padding: 10px; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+.calendar input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.time-slot {
+    flex: 1 1 30%;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    font-size: 1.1em;
+}
+
+.time-slot.selected {
+    background-color: #44CFCB;
+    color: white;
+    border-color: #44CFCB;
+}
+
+/* Define colors for each section */
+.section-box:nth-child(1) { background-color: #dfb0b0; } 
+.section-box:nth-child(2) { background-color: #2a4552; color: white; } 
+.section-box:nth-child(3) { background-color: #dfb0b0; } 
+.section-box:nth-child(4) { background-color: #2a4552; color: white; } 
+.section-box:nth-child(5) { background-color: #dfb0b0; } 
+.section-box:nth-child(6) { background-color: #2a4552; color: white; } 
+.section-box:nth-child(7) { background-color: #dfb0b0; } 
+.section-box:nth-child(8) { background-color: #2a4552; color: white;} 
+
+.section-box:hover {
+    transform: translateY(-5px);
+}
+
+.content-section {
+    display: none;
+    overflow-y: auto; 
+    max-height: calc(100vh - 200px); 
+}
+
+.content-section.active {
+    display: block;
+}
+
+
+
+h3 {
+    margin-top: 0;
+}
+
+form {
+    margin-bottom: 20px;
+    max-width: 600px; 
+    margin: auto; 
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus {
+    outline: none;
+    border-color: #2a4552; 
+}
+
+button {
+    background-color: #2a4552; 
+    color: white;
+    padding: 8px 12px; 
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px; 
+    transition: background-color 0.3s;
+    width: calc(50% - 5px); 
+    box-sizing: border-box; 
+}
+button.paid-button {
+    order: 1; 
+}
+button:hover {
+    background-color: #1f3340; 
+}
+
+.styled-select {
+    width: 104%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+}
+
+.styled-select:focus {
+    outline: none;
+    border-color: #2a4552; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 12px; 
+    max-width: 100%; 
+    overflow-x: auto;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+}
+
+th {
+    background-color: #2a4552; 
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+        gap: 10px;
+    }
+
+    table {
+        font-size: 10px; 
+        max-width: 100%;
+        overflow-x: auto;
+    }
+    .container {
+        padding: 10px;
+    }
+
+    form {
+        max-width: 100%; 
+    }
+}
+.success-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    cursor: pointer;
+}
